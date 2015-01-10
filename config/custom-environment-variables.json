@@ -1,0 +1,4 @@
+{
+    "mongo": "ECOCUBE_MONGO",
+    "port": "ECOCUBE_PORT"
+}

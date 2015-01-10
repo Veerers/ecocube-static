@@ -1,0 +1,22 @@
+doctype html
+html
+    head
+        meta(charset="utf=8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        title ЭКОКУБ
+        link(rel="stylesheet" href="build.css")
+        //- | <script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter26630844 = new Ya.Metrika({id:26630844, webvisor:true, clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/26630844" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    body
+        #application
+            block content
+    #blueimp-gallery.blueimp-gallery.blueimp-gallery-controls
+        .slides
+        h3.title
+        a.prev ‹
+        a.next ›
+        a.close ×
+        a.play-pause
+        ol.indicator
+    script(src="bower_components/blueimp-gallery/js/blueimp-gallery.min.js")
+    script(src="gallery.js")

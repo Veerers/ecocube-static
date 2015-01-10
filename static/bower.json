@@ -1,0 +1,20 @@
+{
+  "name": "ecocube-static",
+  "homepage": "https://github.com/Veerers/ecocube-static",
+  "authors": [
+    "iofjuupasli <iofjuupasli@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "~3.0.2",
+    "blueimp-gallery": "~2.15.2"
+  }
+}

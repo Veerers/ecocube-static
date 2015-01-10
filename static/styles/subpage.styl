@@ -1,0 +1,282 @@
+.subpage
+    background url(/img/bg.png)
+    background-position 0 20px
+    background-color #fff6d4
+    position relative
+    z-index 0
+    &:before
+        content ''
+        background linear-gradient(to top, #fff6d4, alpha(#fff6d4, 0))
+        position absolute
+        display block
+        top 0
+        height 600px
+        left 0
+        right 0
+        z-index -1
+    &:after
+        content ''
+        background linear-gradient(to bottom, #fff6d4, #f2f2f2)
+        position absolute
+        display block
+        top 600px
+        bottom 0
+        left 0
+        right 0
+        z-index -1
+
+    header
+        height 260px
+        @media xs
+            position relative
+            right 97px
+        @media sm
+            height 170px
+        .logo
+            background-image url(/img/logo_eco.png)
+            position absolute
+            top 18px
+            left 111px
+            width 296px
+            height 135px
+            @media lg
+                left 206px
+
+        .contacts
+            position absolute
+            top 130px
+            left 200px
+            right 0
+            margin auto
+            width 190px
+            font-size 14px
+            color #8c6239
+            font-weight bold
+            @media sm
+                top 20px
+                left 480px
+
+            a
+                display block
+                position relative
+                height 45px
+                //padding-top 20px
+                &:before
+                    content ''
+                    display block
+                    position absolute
+                    width 50px
+                    height 50px
+                    background-image url(/img/icons_subpage.png)
+                    left -50px
+                    top -12px
+                b
+                    font-size 24px
+                    color #d3a907
+                    padding-left 8px
+            .phone
+                &:before
+                    background-position -50px
+    .subpage-content
+        background-color #fff
+        margin 10px
+        @media sm
+            width 700px
+            margin auto
+        @media md
+            width 960px
+        nav
+            font-size 14px
+            height 40px
+            background-color #d3a907
+            padding 12px 25px
+            color #fff
+            a
+                text-decoration underline
+        .content
+            padding 10px 30px
+            h1
+                color #d2ba53
+                text-transform uppercase
+                font-size 30px
+                font-weight normal
+            article
+                position relative
+                margin-top 20px
+                clearfix()
+            h2
+                font-size 18px
+                color #8c6239
+                @media sm
+                    float right
+                    width 366px
+                @media md
+                    width 626px
+            .media
+                @media sm
+                    float left
+                    width 244px
+                    margin-right 30px
+                .file
+                    position relative
+                    background-image url(/img/bg.png)
+                    background-color #fff6d4
+                    color #8c6239
+                    font-weight bold
+                    height 140px
+                    padding-top 30px
+                    .btn-download-container
+                        transition background-color .2s
+                        width 120px
+                        margin 30px auto
+                        transform skew(20deg)
+                        background-color #d3a907
+                        color #fff
+                        .btn-download
+                            transform skew(-20deg)
+                            width 100%
+                            margin auto
+                            padding 6px
+                            text-decoration none !important
+                    &:hover
+                        .btn-download-container
+                            background-color darken(#d3a907, 10%)
+                .gallery-container
+                    margin 0
+                    a
+                        display none
+                    a:first-child
+                        display inherit
+                .gallery
+                    &:before
+                        content '< >'
+                        display block
+                        position absolute
+                        width 250px
+                        height 50px
+                        top 0
+                        bottom 0
+                        right 0
+                        @media sm
+                            left 15px
+                        left 35px
+                        margin auto
+                        font-size 50px
+                        color #fff
+                        letter-spacing 40px
+                        opacity 0
+                        transition opacity .2s
+                .image, .gallery
+                    position relative
+                    &:after
+                        content ''
+                        display block
+                        position absolute
+                        width 50px
+                        height 50px
+                        background-image url(/img/icons_subpage.png)
+                        background-position 50px
+                        top 0
+                        bottom 0
+                        right 0
+                        left 0
+                        margin auto
+                        opacity 0
+                        transition opacity .2s
+                    &:hover
+                        cursor pointer
+                        &:after, &:before
+                            opacity 1
+                    img
+                        max-height 100%
+                        max-width 100%
+                .video
+                    position relative
+                    &:after
+                        content '▶'
+                        font-size 22px
+                        display block
+                        position absolute
+                        width 50px
+                        height 50px
+                        color white
+                        border 5px solid
+                        border-radius 100%
+                        padding 6px 14px
+                        top 0
+                        bottom 0
+                        right 0
+                        left 0
+                        margin auto
+                        opacity .7
+                        transition opacity .2s
+                    &:hover
+                        cursor pointer
+                        &:after
+                            opacity 1
+                    img
+                        max-height 100%
+                        max-width 100%
+                > *
+                    margin 5px
+                    overflow hidden
+                    width 100%
+                    max-height 190px
+                    text-align center
+            .text
+                font-size 14px
+                color #6e6e6e
+                line-height 1.4
+                @media sm
+                    float right
+                    width 366px
+                @media md
+                    width 626px
+    .footer-container
+        background white
+    footer
+        color #ababab
+        font-size 13px
+        padding 17px 50px
+        height 50px
+        max-width 1200px
+        margin auto
+        @media xs
+            text-align center
+            padding 17px 0
+
+        .copyright
+            float left
+            @media xs
+                float inherit
+        .menu-footer
+            float right
+            list-style none
+            padding 0
+            margin 0
+            @media xs
+                float inherit
+                margin auto
+                position absolute
+                right 0
+                left 0
+                width 250px
+            > li
+                float left
+                padding 0 10px
+    .go-up-btn
+        height 50px
+        width 50px
+        background-color #d3a907
+        color white
+        font-size 40px
+        padding 10px
+        text-align center
+        position fixed
+        bottom 50px
+        right 11px
+        opacity .6
+        transition opacity .2s
+        &:hover
+            opacity 1
+            text-decoration none

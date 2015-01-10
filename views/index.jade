@@ -1,0 +1,48 @@
+extends ./layout.jade
+block content
+    .home
+        header
+            a(href="/3e")
+                img.logo-3e(src="/img/logo_3e.png")
+            a(href="/ДС ЭКОКУБ")
+                img.logo-eco(src="/img/logo_eco.png")
+            .link-shape.link-shape-1
+                .circle
+                .line
+                a.text-container(href="/ДС ЭКОКУБ")
+                    .text #{i.home.header.ecocube}
+            .link-shape.link-shape-2
+                .line
+                a.text-container(href="/Элементы ДС ЭКОКУБ")
+                    .text #{i.home.header.elements}
+            .link-shape.link-shape-3
+                .circle
+                .line
+                a.text-container(href="/Как построить ЭКОКУБ")
+                    .text #{i.home.header.howTo}
+        menu.menu-container
+            li
+                .menu-label.menu-label-customer #{i.home.menu.customer}
+                menu.menu-submenu
+                    each site in menu['Покупателю']
+                        li
+                            a(href="/" + site) #{site}
+            li
+                .menu-label.menu-label-business #{i.home.menu.business}
+                menu.menu-submenu
+                    each site in menu['Бизнесу']
+                        li
+                            a(href="/" + site) #{site}
+            li
+                .menu-label.menu-label-news #{i.home.menu.news}
+                menu.menu-submenu(data-bind="foreach: siteMap()['Новости']")
+                    each site in menu['Новости']
+                        li
+                            a(href="/" + site) #{site}
+        .footer-container
+            footer
+                .copyright #{i.footer.copyright}
+                menu.menu-footer
+                    li
+                        a(href="https://www.facebook.com/pages/3E/517335705079612" target="_blank")
+                            img(src="/img/facebook-icon.png")

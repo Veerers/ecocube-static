@@ -1,0 +1,59 @@
+extends ./layout.jade
+block content
+    .subpage
+        header
+            a(href="/")
+                .logo
+            .contacts
+                a.phone(href="tel:+375296180104")
+                    | +375 29
+                    b 618 01 04
+                a.phone(href="tel:+375296294357")
+                    | +375 29
+                    b 629 43 57
+                a.mail(href="mailto:3e@ecocube.by") 3e@ecocube.by
+        .subpage-content
+            nav
+                a(href="/") #{i.subpage.mainPage}
+                | &nbsp;-&nbsp;
+                span #{page.title}
+            .content
+                h1 #{page.title}
+                each article in page.articles
+                    article
+                        if ('title' in article) && article.title
+                            h2 #{article.title}
+                        if ('media' in article) && article.media
+                            .media
+                                each mediaItem in article.media
+                                    if mediaItem.type === 'file'
+                                        a(href=mediaItem.id target="_blank")
+                                            div(class=mediaItem.type)
+                                                span #{mediaItem.name}
+                                                .btn-download-container
+                                                    .btn-download Скачать
+                                    if mediaItem.type === 'image'
+                                        a(href=mediaItem.id)
+                                            div(class=mediaItem.type)
+                                                img(src=mediaItem.id)
+                                    if mediaItem.type === 'video'
+                                        a(href='https://www.youtube.com/watch?v=' + mediaItem.id data-id=mediaItem.id)
+                                            div(class=mediaItem.type)
+                                                img(src='http://img.youtube.com/vi/' + mediaItem.id + '/0.jpg')
+                                    if mediaItem.type === 'gallery'
+                                        div(class=mediaItem.type + '-container')
+                                            div
+                                                each image in mediaItem.id.split('\n')
+                                                    a(href=image)
+                                                        div(class=mediaItem.type)
+                                                            img(src=image)
+                        if ('text' in article) && article.text
+                            .text !{article.text}
+        .footer-container
+            footer
+                .copyright #{i.footer.copyright}
+                menu.menu-footer
+                    li
+                        a(href="/") #{i.subpage.mainPage}
+        a.go-up-btn(href="javascript:void(0)") ^
+        // todo go up button
