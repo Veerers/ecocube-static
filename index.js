@@ -12,7 +12,7 @@ var mongo = require('mongojs')(config.mongo);
 var pages = mongo.collection('pages');
 var translations = mongo.collection('translations');
 
-var translation;
+var translation, seo;
 
 translations.findOne({
     language: 'ru'
@@ -21,6 +21,15 @@ translations.findOne({
         throw new Error('translation not found');
     }
     translation = ru;
+});
+
+mongo.collection('seo').findOne({
+    language: 'ru'
+}, function (err, _seo) {
+    if (err) {
+        throw new Error('seo not found');
+    }
+    seo = _seo;
 });
 
 app.get('/', function (req, res, next) {
@@ -40,6 +49,10 @@ app.get('/', function (req, res, next) {
             return result;
         }, {});
         res.render('index', {
+            page: {
+                title: ''
+            },
+            seo: seo,
             menu: menu,
             i: translation
         });
@@ -54,6 +67,7 @@ app.get('/:title', function (req, res, next) {
             return next(err);
         }
         res.render('subpage', {
+            seo: seo,
             page: page,
             i: translation
         });
